@@ -38,5 +38,7 @@ public class CharStats : MonoBehaviour {
         Debug.Log(transform.name + "died");
     }
 
+    
+
    
 }

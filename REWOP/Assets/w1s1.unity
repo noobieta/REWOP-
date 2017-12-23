@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45122486, g: 0.49995935, b: 0.5682788, a: 1}
+  m_IndirectSpecularColor: {r: 0.45122463, g: 0.49995887, b: 0.56827843, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 66a298b7f7227284a824e11ef727eacd, type: 2}
 --- !u!1001 &1813942
 Prefab:
@@ -337,7 +333,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -353,7 +348,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -532,7 +526,7 @@ GameObject:
   - component: {fileID: 213562961}
   - component: {fileID: 213562964}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SceneTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,8 +539,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 213562959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.6, y: 89, z: 3}
-  m_LocalScale: {x: 11.23, y: 21.8, z: 20.64}
+  m_LocalPosition: {x: 77.6, y: 89, z: 0.28}
+  m_LocalScale: {x: 14.25077, y: 14.333375, z: 20.64}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -560,7 +554,6 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -576,7 +569,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -2030,7 +2022,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4801082308570858, guid: 3a8a06ec3f78b3f48a2b0755e801264b, type: 2}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 100.96366
       objectReference: {fileID: 0}
     - target: {fileID: 4532846219006938, guid: 3a8a06ec3f78b3f48a2b0755e801264b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2521,6 +2513,21 @@ Prefab:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1323810460}
+    - target: {fileID: 114083882522094826, guid: dcb24f13f051c904c92f764b03269b07,
+        type: 2}
+      propertyPath: drag
+      value: 3.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 54976078287471842, guid: dcb24f13f051c904c92f764b03269b07,
+        type: 2}
+      propertyPath: m_Mass
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 54976078287471842, guid: dcb24f13f051c904c92f764b03269b07,
+        type: 2}
+      propertyPath: m_Drag
+      value: 3.57
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcb24f13f051c904c92f764b03269b07, type: 2}
   m_IsPrefabParent: 0
@@ -2782,7 +2789,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2798,7 +2804,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

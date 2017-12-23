@@ -18,4 +18,20 @@ public class EnemyAnimator : MonoBehaviour {
         float speedPercent = agent.velocity.magnitude / agent.speed;
         animator.SetFloat("speedPercent", speedPercent, smoothTime, Time.deltaTime);
 	}
+
+    public void EnemyHit()
+    {
+        animator.SetBool("IsHit", true);
+        
+    }
+
+    public void EnemyNotHit()
+    {
+        animator.SetBool("IsHit", false);
+
+    }
+    public void EnemyDie()
+    {
+        animator.SetBool("IsDie", true);
+    }
 }

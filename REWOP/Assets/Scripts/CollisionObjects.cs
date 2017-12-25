@@ -17,7 +17,7 @@ public class CollisionObjects : MonoBehaviour {
     {
         
 
-    
+    if(!items.Contains(collider.gameObject))
         if (collider.gameObject.tag == ("Enemy"))
         {
             items.Add(collider.gameObject);
@@ -25,7 +25,8 @@ public class CollisionObjects : MonoBehaviour {
     }
     private void OnTriggerExit(Collider collider)
     {
-  items.Remove(collider.gameObject);
+        if (items.Contains(collider.gameObject))
+            items.Remove(collider.gameObject);
 
     }
 }

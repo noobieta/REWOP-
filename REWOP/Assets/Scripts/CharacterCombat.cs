@@ -30,18 +30,14 @@ public class CharacterCombat : MonoBehaviour
        
     }
 
-    IEnumerator DoDamage (CharStats stats, float delay) {
-        yield return new WaitForSeconds(delay);
-        stats.TakeDamage(myStats.damage.GetValue());
-
-    }
-
-    public void MultiAttack(List <CharStats> targetStats)
+    public void MultiAttack(List<CharStats> targetStatuses)
     {
         if (attackCooldown <= 0f)
         {
-            StartCoroutine(DoMultiDamage(targetStats, attackdelay));
-
+            foreach (CharStats targetStats in targetStatuses)
+            {
+                StartCoroutine(DoDamage(targetStats, attackdelay));
+            }
             if (OnAttack != null)
                 OnAttack();
 
@@ -49,6 +45,14 @@ public class CharacterCombat : MonoBehaviour
         }
 
     }
+
+    IEnumerator DoDamage (CharStats stats, float delay) {
+        yield return new WaitForSeconds(delay);
+        stats.TakeDamage(myStats.damage.GetValue());
+
+    }
+
+
 
     IEnumerator DoMultiDamage(List <CharStats> stats, float delay)
     {

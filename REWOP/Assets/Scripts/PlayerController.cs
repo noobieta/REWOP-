@@ -41,53 +41,28 @@ public class PlayerController : MonoBehaviour {
     }*/
     public void AttackAct()
     { // invoke on button
-        
+
         CollisionObjects ColObj = this.gameObject.transform.GetChild(1).GetComponent<CollisionObjects>();
+        List<CharStats> targetStats = new List<CharStats>();
         if (ColObj != null)
         {
             foreach (GameObject item in ColObj.items)
             {
+                if (item == null)
+                {
+                    ColObj.items.Remove(item);
+                    continue;
+                }
+                targetStats.Add(item.GetComponent<CharStats>());
+                //if (targetStats != null)
 
-                CharStats targetStats = item.GetComponent<CharStats>();
-                if (targetStats != null)
-                    combat.Attack(targetStats);
             }
+            Debug.Log("Number of CharStats: " + targetStats.Count);
+   
+                combat.MultiAttack(targetStats);
+       
         }
-        else {
-            Debug.Log("ColObj is NULL!");
-        }
-        //CollisionObjects ColObj = this.gameObject.transform.GetChild(1).GetComponent<CollisionObjects>();
-        //if (ColObj != null)
-        //{
-
-        //    List<CharStats> targetsStats = null;
-        //    foreach (GameObject item in ColObj.items)
-        //    {
-        //        if (item != null)
-        //            targetsStats.Add(item.GetComponent<CharStats>());
-
-        //    }
-
-        //    if (targetsStats != null)
-        //        combat.MultiAttack(targetsStats);
-        //}
-        //else
-        //{
-        //    Debug.Log("ColObj is NULL!");
-        //}
-        //  TriggerList = GOs;
-
-
-
-
-        /*if (!AttackByRaycast()) {
-         //   AttackBySphere();
-
-            //Debug.Log("Attack via Sphere");
-            return;
-        }// Debug.Log("Attack via RayCast");*/
     }
-
     #region AttackMethods
     private bool AttackByRaycast() {
         Transform candidateTarget = GetInfront();

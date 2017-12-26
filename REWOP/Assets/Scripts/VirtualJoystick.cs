@@ -8,14 +8,11 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
     private Image bgImg;
     private Image joystickImg;
-    private Vector3 InputVector { set; get; }
+    public Vector3 InputVector { set; get; }
 
     private void Start()
     {
-
-        bgImg = GetComponent<Image>();
-        joystickImg = transform.GetChild(0).GetComponent<Image>();
-        InputVector = Vector3.zero;
+        Init();
     }
 
     public virtual void OnDrag(PointerEventData ped)
@@ -65,6 +62,12 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     }
 
 
+    public void Init()
+    {
 
+        bgImg = GetComponent<Image>();
+        joystickImg = transform.GetChild(0).GetComponent<Image>();
+        InputVector = Vector3.zero;
+    }
 
 }

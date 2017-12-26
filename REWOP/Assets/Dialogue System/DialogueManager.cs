@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour {
         sentences.Clear();
         dBoxAnimator.SetBool("IsOpen", true);
         CtrlAnimator.SetBool("IsOpen", false);
-        playerMotor.Freeze = true;
+        playerMotor.Freeze = true; //potential change here to pause time
        // Debug.Log("Starting conversation with " + dialogue.name);
         nameText.text = dialogue.name;
       
@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour {
 
     void EndDialogue() {
         // Debug.Log("End of Conversation");
-        playerMotor.Freeze = false;
+        playerMotor.Freeze = false;//potential change here to play time
         dBoxAnimator.SetBool("IsOpen",false);
         CtrlAnimator.SetBool("IsOpen", true);
     }

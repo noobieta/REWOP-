@@ -4,22 +4,22 @@ using UnityEngine.AI;
 using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour {
-    Rigidbody agent;
+    PlayerMotor agent;
     Animator animator;
 
     const float locomotionAnimationSmoothTime = .1f;
 	// Use this for initialization
 	void Start () {
-        agent = GetComponent<Rigidbody>();
+        agent = GetComponent<PlayerMotor>();
         animator = GetComponentInChildren<Animator>();
     }
 	
 	// Update is called once per frame  
 	void FixedUpdate () {
     
-            float speedPercent = agent.velocity.magnitude;// agent.speed;
+            float speedPercent = Mathf.Clamp(agent.walkspeed/agent.currentSpeed,0f,1f)  * agent.inputDir.magnitude;// agent.speed;
         //    Debug.Log(agent.velocity.magnitude / 500);
             animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
-   
+        Debug.Log("SpeedPercent:" + speedPercent);   
 	}
 }

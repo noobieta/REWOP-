@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 43cbfd583ce602c4e915c537a2afbf21
+  m_OcclusionCullingData: {fileID: 36300000, guid: 41d29a41160e3d9459f5c113224645aa,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -38,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18369311, g: 0.22806275, b: 0.2987075, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -129,15 +130,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4503641969148182, guid: 42c666a062508e14fa5141e437171e43, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 78
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 4503641969148182, guid: 42c666a062508e14fa5141e437171e43, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90
+      value: 114.1
       objectReference: {fileID: 0}
     - target: {fileID: 4503641969148182, guid: 42c666a062508e14fa5141e437171e43, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 71
+      value: 83.3
       objectReference: {fileID: 0}
     - target: {fileID: 4503641969148182, guid: 42c666a062508e14fa5141e437171e43, type: 2}
       propertyPath: m_LocalRotation.x
@@ -207,9 +208,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1342361949419238, guid: 42c666a062508e14fa5141e437171e43, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42c666a062508e14fa5141e437171e43, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &361893775 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20833080537981918, guid: 42c666a062508e14fa5141e437171e43,
+    type: 2}
+  m_PrefabInternal: {fileID: 182950375}
 --- !u!1001 &552521566
 Prefab:
   m_ObjectHideFlags: 0
@@ -393,6 +403,30 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 0.484
+      objectReference: {fileID: 0}
+    - target: {fileID: 223613086004081994, guid: 396a3d1219d6d5e49a2506710f9908ef,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223613086004081994, guid: 396a3d1219d6d5e49a2506710f9908ef,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 361893775}
+    - target: {fileID: 223613086004081994, guid: 396a3d1219d6d5e49a2506710f9908ef,
+        type: 2}
+      propertyPath: m_PlaneDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223613086004081994, guid: 396a3d1219d6d5e49a2506710f9908ef,
+        type: 2}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336043673394986, guid: 396a3d1219d6d5e49a2506710f9908ef, type: 2}
+      propertyPath: m_TagString
+      value: maincanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 396a3d1219d6d5e49a2506710f9908ef, type: 2}
@@ -621,8 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenesToLoad:
-  - w1s1
-  - w1s1tos2
+  - w1s2
 --- !u!1001 &1146478435
 Prefab:
   m_ObjectHideFlags: 0
@@ -632,7 +665,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4736219878098712, guid: ddb7a198243e92646a6e224d3a4a0a49, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 73.98
+      value: 76.39
       objectReference: {fileID: 0}
     - target: {fileID: 4736219878098712, guid: ddb7a198243e92646a6e224d3a4a0a49, type: 2}
       propertyPath: m_LocalPosition.y
@@ -640,7 +673,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4736219878098712, guid: ddb7a198243e92646a6e224d3a4a0a49, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 77
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 4736219878098712, guid: ddb7a198243e92646a6e224d3a4a0a49, type: 2}
       propertyPath: m_LocalRotation.x

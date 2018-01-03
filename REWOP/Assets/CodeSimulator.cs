@@ -56,6 +56,9 @@ public class CodeSimulator : MonoBehaviour
     //Modal
     private ModalDialogueSystem Modal;
 
+    //REWOP
+    public QuestObject quest;
+
     void Awake()
     {
         CS = this;
@@ -245,7 +248,8 @@ public class CodeSimulator : MonoBehaviour
                 PAS.ExecuteAction(playerCurrentAction);
                 Rules();
                 if (bossStats.IsDead() || playerStats.IsDead())
-                    EndFight = true;
+                  EndFight = true;
+                 
 
                 yield return new WaitForSeconds(3f);
                 if (EndFight)
@@ -299,6 +303,9 @@ public class CodeSimulator : MonoBehaviour
         IsSimulating = false;
         
         yield return new WaitForSeconds(2f);
+        if (bossStats.IsDead())
+            quest.EndQuest(); //remove after adding summary!
+
 
     }
 

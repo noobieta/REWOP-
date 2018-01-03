@@ -12,6 +12,7 @@ public class QuestObject : MonoBehaviour {
 
 
     public bool IsCollection;
+    public bool IsBoss = false;
     public bool EndInstant;
     public string itemTag;
     public int currentCount = 0;
@@ -19,6 +20,7 @@ public class QuestObject : MonoBehaviour {
     public QuestTrigger EndQuestTrigger;
     public Dialogue startDialogue;
     public Dialogue endDialogue;
+    public BossQuest BQ;
 
     public delegate void QuestStarted();
     public static event QuestStarted OnQuestStart;
@@ -78,6 +80,18 @@ public class QuestObject : MonoBehaviour {
                 EndQuestTrigger.gameObject.SetActive(false);
             }
         }
+        else if (IsBoss)
+        {
+            //disable main
+            BQ.mainCam = Camera.main.gameObject;
+           BQ.mainCam.SetActive(false);
+            BQ.mainCanvas = GameObject.FindGameObjectWithTag("maincanvas");
+            BQ.mainCanvas.SetActive(false);
+            //enable combat
+            BQ.battleCam.SetActive(true);
+            BQ.codeBlocks.SetActive(true);
+
+        }
         
       //  titleText.text = Title;
 
@@ -89,13 +103,29 @@ public class QuestObject : MonoBehaviour {
         // titleText.text = "";
         if (OnQuestEnd != null)
             OnQuestEnd();
-
+        if (IsBoss)
+        {
+            BQ.mainCam.SetActive(true);
+            BQ.mainCanvas.SetActive(true);
+            //disable combat
+            BQ.battleCam.SetActive(false);
+            BQ.codeBlocks.SetActive(false);
+        }
         QM.ShowEndDialogue(endDialogue);
         QM.questCompleted[questNumber] = true;
         gameObject.SetActive(false);
 
     }
+    public void FailQuest()
+    {
+        BQ.mainCam.SetActive(true);
+        BQ.mainCanvas.SetActive(true);
+        //disable combat
+        BQ.battleCam.SetActive(false);
+        BQ.codeBlocks.SetActive(false);
 
+        PlayerManager.instance.KillPlayer();
+    }
     public bool CollectionComplete() {
            bool check;
             if (currentCount >= required)
@@ -104,4 +134,12 @@ public class QuestObject : MonoBehaviour {
             return check;
   
     }
+}
+
+[System.Serializable]
+public class BossQuest{
+    public GameObject battleCam;
+   public GameObject codeBlocks;
+    public GameObject mainCam;
+    public GameObject mainCanvas;
 }

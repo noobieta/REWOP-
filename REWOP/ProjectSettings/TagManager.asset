@@ -22,6 +22,7 @@ TagManager:
   - truecontent
   - codeblock
   - decision
+  - maincanvas
   layers:
   - Default
   - TransparentFX

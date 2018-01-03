@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestTrigger : MonoBehaviour {
-    private QuestManager QM;
+   private QuestManager QM;
     public int questNumber;
     public bool IsStartQuest;
     
  
 	// Use this for initialization
 	void Start () {
-        QM = FindObjectOfType<QuestManager>(); 	
+        QM = QuestManager.instance;
+        if (QM == null)
+        {
+            Debug.LogError("Instance of Quest Manager was not found!");
+        }
       
 	}
 	

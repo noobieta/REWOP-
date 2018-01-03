@@ -7,6 +7,21 @@ TagManager:
   - Enemy
   - Collectibles1
   - Collectibles3
+  - Sword
+  - AttackButton
+  - EM
+  - CBM
+  - repeatcase
+  - conditioncase
+  - codecanvas
+  - content
+  - placeholder
+  - main
+  - repeat
+  - falsecontent
+  - truecontent
+  - codeblock
+  - decision
   layers:
   - Default
   - TransparentFX
@@ -16,7 +31,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 

@@ -15,4 +15,17 @@ public class PlayerStats : CharStats {
         if (base.Heal(amount)) return true;
         else return false;
     }
+    public void KillPlayer()
+    {
+        TakeDamage(maxHealth);
+    }
+
+    public bool IsDead()
+    {
+        if (currentHealth <= 0)
+            return true;
+        else
+            return false;
+    }
+
 }

@@ -12,7 +12,11 @@ public class QuestCollectTrigger : MonoBehaviour {
     
     private void Start()
     {
-        QM = FindObjectOfType<QuestManager>();
+        QM = QuestManager.instance;
+        if (QM == null)
+        {
+            Debug.LogError("Instance of Quest Manager was not found!");
+        }
 
     }
 

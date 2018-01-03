@@ -12,8 +12,9 @@ public class HealthCenterCollision : MonoBehaviour {
     bool candidateInSphere = false;
     // Use this for initialization
     void Start () {
-       // collider = GetComponent<SphereCollider>();
-        playerStats =  healCandidate.GetComponent<PlayerStats>();
+        // collider = GetComponent<SphereCollider>();
+        healCandidate = PlayerManager.instance.player.transform;
+         playerStats =  healCandidate.GetComponent<PlayerStats>();
         healthSphere = GetComponent<SphereCollider>();
 	}
 
@@ -35,6 +36,8 @@ public class HealthCenterCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider)
     {
+        //Debug.Log(collider.name + " collides");
+        //Debug.Log("Collider must be " + healCandidate.name);
         if (collider.transform==healCandidate)
         {
             Debug.Log("player in sphere");
@@ -46,13 +49,6 @@ public class HealthCenterCollision : MonoBehaviour {
     {
         StopAllCoroutines();
     }
-
-    //private void OnTriggerExit(Collider collider)
-    //{
-    //  if (collider.transform == healCandidate) { 
-    //  Debug.Log(healCandidate.name + "Is Out of the sphere");
-
-    //        candidateInSphere = false;}
-    //}
+    
 
 }

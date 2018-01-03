@@ -8,7 +8,11 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerManager instance;
 
     void Awake() {
-        instance = this;
+        if (!instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
 

@@ -4,9 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneCollider : MonoBehaviour {
-    public int ScenetoLoad;
+    private SceneControl sc;
+    public string sceneToLoad;
+    public string sceneToUnload;
+    private void Start()
+    {
+
+        sc = SceneControl.instance;
+    }
+    void LoadScenes()
+    {
+
+        sc.UnloadScene(sceneToUnload);
+        sc.LoadScene(sceneToLoad);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(ScenetoLoad, LoadSceneMode.Single);
+        LoadScenes();
     }
+
 }

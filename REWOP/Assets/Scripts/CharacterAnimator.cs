@@ -20,6 +20,6 @@ public class CharacterAnimator : MonoBehaviour {
             float speedPercent = Mathf.Clamp(agent.walkspeed/agent.currentSpeed,0f,1f)  * agent.inputDir.magnitude;// agent.speed;
         //    Debug.Log(agent.velocity.magnitude / 500);
             animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
-        Debug.Log("SpeedPercent:" + speedPercent);   
+        //Debug.Log("SpeedPercent:" + speedPercent);   
 	}
 }

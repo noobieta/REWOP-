@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour {
+    public static QuestManager instance;
     public QuestObject[] quests;
     public bool[] questCompleted;
     private DialogueManager DM;
    public int activeQuest;
 
     // Use this for initialization
+    private void Awake()
+    {
+
+        if (instance == null)
+            instance = this;
+    }
     void Start () {
         DM = FindObjectOfType<DialogueManager>();
         questCompleted = new bool[quests.Length];

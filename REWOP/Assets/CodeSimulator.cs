@@ -212,7 +212,9 @@ public class CodeSimulator : MonoBehaviour
         StartCoroutine(simulation(totalCount));
 
     }
+
     int battlecount = 0;
+
     IEnumerator simulation(int totalCount)
     {
         bool EndFight = false;
@@ -302,11 +304,12 @@ public class CodeSimulator : MonoBehaviour
         IsCompiling = false;
         IsSimulating = false;
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(7f);
         if (bossStats.IsDead())
+        {
             quest.EndQuest(); //remove after adding summary!
 
-
+        }
     }
 
     void AddtoConsole(string consoleText)

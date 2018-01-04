@@ -105,8 +105,9 @@ public class QuestObject : MonoBehaviour {
             OnQuestEnd();
         if (IsBoss)
         {
-            BQ.mainCam.SetActive(true);
+           
             BQ.mainCanvas.SetActive(true);
+            BQ.mainCam.SetActive(true);
             //disable combat
             BQ.battleCam.SetActive(false);
             BQ.codeBlocks.SetActive(false);
@@ -118,8 +119,9 @@ public class QuestObject : MonoBehaviour {
     }
     public void FailQuest()
     {
-        BQ.mainCam.SetActive(true);
         BQ.mainCanvas.SetActive(true);
+        BQ.mainCam.SetActive(true);
+      
         //disable combat
         BQ.battleCam.SetActive(false);
         BQ.codeBlocks.SetActive(false);

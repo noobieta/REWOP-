@@ -19,6 +19,8 @@ public class CodeBlockManager : MonoBehaviour
 
     public FillPlayerActions fillPlayerActions;
 
+    public List<GameObject> blockUsed = new List<GameObject>();
+
     public void CodeContainerReader(Transform content)
     {
         //   Debug.Log("CodeContainer Reader Entered " + content.name);
@@ -66,6 +68,7 @@ public class CodeBlockManager : MonoBehaviour
         Debug.Log("Starting Code Reader: " + depth);
         if (depth == 0)
         {
+            blockUsed.Clear();                                                                                                                                                 
             pointerObj.gameObject.SetActive(true);
         }
         // int ReaderID = CodeReaderID;

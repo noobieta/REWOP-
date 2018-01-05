@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: c4c4e20abcd4ba14db0fa575f1bfa58c
+timeCreated: 1514919530
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Chest
+    100004: Cylinder
+    100006: Cylinder_001
+    100008: //RootNode
+    100010: Finger_L
+    100012: Finger_R
+    100014: Foot_L
+    100016: Foot_R
+    100018: Hand_L
+    100020: Hand_R
+    100022: Head
+    100024: Leg_L
+    100026: Leg_R
+    100028: LowerArm_L
+    100030: LowerArm_R
+    100032: Neck
+    100034: Plane
+    100036: Plane_001
+    100038: Plane_002
+    100040: Plane_003
+    100042: Plane_004
+    100044: Plane_005
+    100046: Plane_006
+    100048: Plane_007
+    100050: Plane_008
+    100052: Shoulder_L
+    100054: Shoulder_R
+    100056: Spine
+    100058: Thigh_L
+    100060: Thigh_R
+    100062: Thumb_L
+    100064: Thumb_R
+    100066: ThumbLower_L
+    100068: ThumbLower_R
+    100070: Toe_L
+    100072: Toe_R
+    100074: UpperArm_L
+    100076: UpperArm_R
+    100078: Waist
+    400000: Armature
+    400002: Chest
+    400004: Cylinder
+    400006: Cylinder_001
+    400008: //RootNode
+    400010: Finger_L
+    400012: Finger_R
+    400014: Foot_L
+    400016: Foot_R
+    400018: Hand_L
+    400020: Hand_R
+    400022: Head
+    400024: Leg_L
+    400026: Leg_R
+    400028: LowerArm_L
+    400030: LowerArm_R
+    400032: Neck
+    400034: Plane
+    400036: Plane_001
+    400038: Plane_002
+    400040: Plane_003
+    400042: Plane_004
+    400044: Plane_005
+    400046: Plane_006
+    400048: Plane_007
+    400050: Plane_008
+    400052: Shoulder_L
+    400054: Shoulder_R
+    400056: Spine
+    400058: Thigh_L
+    400060: Thigh_R
+    400062: Thumb_L
+    400064: Thumb_R
+    400066: ThumbLower_L
+    400068: ThumbLower_R
+    400070: Toe_L
+    400072: Toe_R
+    400074: UpperArm_L
+    400076: UpperArm_R
+    400078: Waist
+    4300000: Cylinder_001
+    4300002: Plane_008
+    4300004: Plane_007
+    4300006: Cylinder
+    4300008: Plane_006
+    4300010: Plane_005
+    4300012: Plane_004
+    4300014: Plane_003
+    4300016: Plane_002
+    4300018: Plane_001
+    4300020: Plane
+    7400000: Default Take
+    7400002: Die
+    7400004: Hit
+    7400006: Idle
+    7400008: Run
+    7400010: Talking
+    7400012: Walk
+    7400014: Waving
+    9500000: //RootNode
+    13700000: Cylinder
+    13700002: Cylinder_001
+    13700004: Plane
+    13700006: Plane_001
+    13700008: Plane_002
+    13700010: Plane_003
+    13700012: Plane_004
+    13700014: Plane_005
+    13700016: Plane_006
+    13700018: Plane_007
+    13700020: Plane_008
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: d38639aaa09583c4ea0329c4efca35f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat
+    second: {fileID: 2100000, guid: adfe8a868b0911e4a8ea9426c9f0ccbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 54af3a97bdfb9a642b56b9bcd48c5c94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: cdb02e275a4b5014a84db50347470ea4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: 180ecacc16974c04ea49cecf072ed13c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: af9bc4ab4c03a314f913b07b6893ea8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_005
+    second: {fileID: 2100000, guid: 461c9dec35c617242adaec0af27adc79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: a3135800bf1eb2d499438a567b2f41e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoes
+    second: {fileID: 2100000, guid: dea828c86c6d05648be31cd95b3d5467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 0e8426ebf42313943ae1a4e8cbec4764, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

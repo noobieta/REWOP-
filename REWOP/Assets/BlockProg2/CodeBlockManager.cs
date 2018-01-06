@@ -19,7 +19,7 @@ public class CodeBlockManager : MonoBehaviour
 
     public FillPlayerActions fillPlayerActions;
 
-    public List<GameObject> blockUsed = new List<GameObject>();
+	public List<Transform> blockUsed = new List<Transform>();
 
     public void CodeContainerReader(Transform content)
     {
@@ -98,17 +98,22 @@ public class CodeBlockManager : MonoBehaviour
             if (blockMeta == null)
             {
                 action = ActionStates.NULL;
+
              //   Debug.Log("blockMeta is null: " + currentBlock.name);
 
             }
             else if (blockMeta.type == "codeblock")
             {
-
+				if(!blockUsed.Contains(currentBlock))
+					blockUsed.Add (currentBlock);
                 //Debug.Log("Executing Function:" + blockMeta.act);
                 action = blockMeta.act;
+
             }
             else if (blockMeta.type == "decision")
             {
+				if(!blockUsed.Contains(currentBlock))
+					blockUsed.Add (currentBlock);
                 if (GameObject.FindGameObjectWithTag("EM").GetComponent<ActionsScript>().actions.Count > PlayerActions.Count)
                     currentEnemyAction = GameObject.FindGameObjectWithTag("EM").GetComponent<ActionsScript>().actions[PlayerActions.Count].Action;
                 else
@@ -146,6 +151,9 @@ public class CodeBlockManager : MonoBehaviour
             }
             else if (blockMeta.type == "repeat")
             {
+				if(!blockUsed.Contains(currentBlock))
+					blockUsed.Add (currentBlock);
+					
                 //    Debug.Log("Repeat Function Executed!");
                 bool RepStep = blockMeta.RepeatStep();
                 if (RepStep)
@@ -195,7 +203,6 @@ public class CodeBlockManager : MonoBehaviour
 
 
         Debug.Log("Ending Code Reader: " + depth);
-
       
         yield return null;
 

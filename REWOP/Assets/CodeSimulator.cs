@@ -307,6 +307,7 @@ public class CodeSimulator : MonoBehaviour
         yield return new WaitForSeconds(7f);
         if (bossStats.IsDead())
         {
+			Debug.Log ("Used " + CBM.blockUsed.Count + " blocks");
             quest.EndQuest(); //remove after adding summary!
 
         }

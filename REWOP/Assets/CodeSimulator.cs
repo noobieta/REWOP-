@@ -16,9 +16,9 @@ public class CodeSimulator : MonoBehaviour
 
     private List<ActionStates> EnemyActions;
     public int OverheadActionTreshold = 5;
-    private int PlayerPoints;
-    private int EnemyPoints;
-    private int EnemyPointer = 0;
+    //private int PlayerPoints;
+    //private int EnemyPoints;
+   // private int EnemyPointer = 0;
     public static CodeSimulator CS;
     public CodeBlockManager CBM;
     public Countdown Timer;
@@ -56,8 +56,12 @@ public class CodeSimulator : MonoBehaviour
     //Modal
     private ModalDialogueSystem Modal;
 
-    //REWOP
+    //REWOP classes
     public QuestObject quest;
+    public WinSummary WinSum;
+
+    //GOALS
+    public int minimunBlock;
 
     void Awake()
     {
@@ -69,6 +73,8 @@ public class CodeSimulator : MonoBehaviour
     {
         GameObject cbm = GameObject.FindGameObjectWithTag("CBM");
         CBM = cbm.GetComponent<CodeBlockManager>();
+        WinSum.minBlocks = minimunBlock;
+        WinSum.quest = quest;
     }
 
     public void LateUpdate()
@@ -86,8 +92,8 @@ public class CodeSimulator : MonoBehaviour
 
         
         //  cbm = new CodeBlockManager();
-        PlayerPoints = 0;
-        EnemyPoints = 0;
+    //    PlayerPoints = 0;
+     //   EnemyPoints = 0;
         EnemyActions = new List<ActionStates>();
         EAS.PrepareActions();
         EnemyActions.Clear();
@@ -243,7 +249,7 @@ public class CodeSimulator : MonoBehaviour
                     PlayerBlockPos = PlayerScriptCase.GetChild(i);
                 }
 
-                //dito ako ahahahha 
+                
                 yield return new WaitForSeconds(.5f);
                 Debug.Log("EAS:" + enemyCurrentAction.ToString());
                 EAS.ExecuteAction(enemyCurrentAction);
@@ -308,7 +314,10 @@ public class CodeSimulator : MonoBehaviour
         if (bossStats.IsDead())
         {
 			Debug.Log ("Used " + CBM.blockUsed.Count + " blocks");
-            quest.EndQuest(); //remove after adding summary!
+            WinSum.blockUsed = CBM.blockUsed.Count;
+            WinSum.IsPerfect = (playerStats.currentHealth >= playerStats.maxHealth);
+            WinSum.ShowWin();
+           
 
         }
     }
@@ -387,19 +396,19 @@ public class CodeSimulator : MonoBehaviour
         if (Player)
         {
             StartCoroutine(EAS.TriggerActionWithDelay("IsHit", damageDelay, damage));
-            ReturnString += "Player Receives " + points + " points!";
-            PlayerPoints += points;
+          //  ReturnString += "Player Receives " + points + " points!";
+            //PlayerPoints += points;
         }
         if (Enemy)
         {
             StartCoroutine(PAS.TriggerActionWithDelay("IsHit", damageDelay, damage));
-            ReturnString += " Enemy Receives " + points + " points!";
-            EnemyPoints += points;
+           // ReturnString += " Enemy Receives " + points + " points!";
+          //  EnemyPoints += points;
 
         }
         if (!Player && !Enemy)
         {
-            ReturnString += " No one received any points";
+           // ReturnString += " No one received any points";
         }
 
 

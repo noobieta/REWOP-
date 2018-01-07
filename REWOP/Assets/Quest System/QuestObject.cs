@@ -94,7 +94,7 @@ public class QuestObject : MonoBehaviour {
         }
         
       //  titleText.text = Title;
-
+      //Testing
      //   Debug.Log(titleText.text);
     }
 
@@ -105,12 +105,13 @@ public class QuestObject : MonoBehaviour {
             OnQuestEnd();
         if (IsBoss)
         {
-           
-            BQ.mainCanvas.SetActive(true);
-            BQ.mainCam.SetActive(true);
             //disable combat
             BQ.battleCam.SetActive(false);
             BQ.codeBlocks.SetActive(false);
+
+            BQ.mainCanvas.SetActive(true);
+            BQ.mainCam.SetActive(true);
+            
         }
         QM.ShowEndDialogue(endDialogue);
         QM.questCompleted[questNumber] = true;
@@ -119,12 +120,14 @@ public class QuestObject : MonoBehaviour {
     }
     public void FailQuest()
     {
-        BQ.mainCanvas.SetActive(true);
-        BQ.mainCam.SetActive(true);
-      
+
+
         //disable combat
         BQ.battleCam.SetActive(false);
         BQ.codeBlocks.SetActive(false);
+
+        BQ.mainCanvas.SetActive(true);
+        BQ.mainCam.SetActive(true);
 
         PlayerManager.instance.KillPlayer();
     }

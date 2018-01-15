@@ -52,11 +52,18 @@ public class WinSummary : MonoBehaviour
         if (IsMinBlock)
         {
             UsedBlocksImg.sprite = Check;
+            AchievementData.instance.UpdateCounterByTag("Optimal", 1);
+            if(blockUsed == 2)
+            {
+
+                AchievementData.instance.UpdateCounterByTag("TwoBlock", 1);
+            }
         }
         //if no damage
         if (IsPerfect)
         {
             LifeImg.sprite = Check;
+            AchievementData.instance.UpdateCounterByTag("PerfCounters", 1);
         }
 
 

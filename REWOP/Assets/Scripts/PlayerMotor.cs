@@ -74,6 +74,7 @@ public class PlayerMotor : MonoBehaviour {
     private void Start()
     {
         camT = Camera.main.transform;
+    
     }
     private void FixedUpdate()
     {
@@ -92,5 +93,11 @@ public class PlayerMotor : MonoBehaviour {
         
 
         #endregion
+    }
+  
+    private void SetPlayerTransform(Vector3 position,Quaternion rotation)
+    {
+        transform.position = position;
+        transform.rotation = rotation;
     }
 }

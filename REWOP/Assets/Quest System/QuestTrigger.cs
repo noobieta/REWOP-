@@ -22,8 +22,10 @@ public class QuestTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Player has entered a trigger");
             if (!QM.questCompleted[questNumber])
             {
+                Debug.Log("Triggered quest is not yet completed");
                 if (IsStartQuest && !QM.quests[questNumber].gameObject.activeSelf)//
                 {
                     StartQuest();

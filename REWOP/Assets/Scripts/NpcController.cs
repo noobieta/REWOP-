@@ -70,7 +70,7 @@ public class NpcController : MonoBehaviour
         
             FaceTarget();
             state = State.Idle;
-            Debug.Log("Villager stopped");
+          //  Debug.Log("Villager stopped");
         }
         agent.SetDestination(target);
     }
@@ -79,7 +79,7 @@ public class NpcController : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(minIdleTime, maxIdleTime));
         state = State.Wander;
-        Debug.Log("Villager Wanders");
+       // Debug.Log("Villager Wanders");
         yield return null;
     }
 

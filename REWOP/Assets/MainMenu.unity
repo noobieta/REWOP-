@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -826,7 +826,7 @@ ParticleSystem:
   lengthInSec: 20
   simulationSpeed: 0.05
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -875,7 +875,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -518323724
+  randomSeed: -354338232
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4386,6 +4386,7 @@ GameObject:
   - component: {fileID: 564624881}
   - component: {fileID: 564624880}
   - component: {fileID: 564624879}
+  - component: {fileID: 564624882}
   m_Layer: 5
   m_Name: LoadButton
   m_TagString: Untagged
@@ -4451,7 +4452,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 564624880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129754528}
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1676494874}
+        m_MethodName: LoadData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &564624880
@@ -4487,6 +4510,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 564624877}
+--- !u!114 &564624882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 564624877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbec86275540f645964b7b0ed0c2289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &717638632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,7 +5020,7 @@ ParticleSystem:
   lengthInSec: 20
   simulationSpeed: 0.05
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -5035,7 +5069,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1364305269
+  randomSeed: -1238989978
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8330,7 +8364,7 @@ ParticleSystem:
   lengthInSec: 20
   simulationSpeed: 0.08
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -8379,7 +8413,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 940731449
+  randomSeed: 2076478175
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12785,13 +12819,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2129754528}
         m_MethodName: LoadLevel
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Player
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -12829,6 +12863,102 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1576568313}
+--- !u!1 &1595713924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1595713926}
+  - component: {fileID: 1595713925}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1595713925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595713924}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df35aa554399d48418d521aac113d8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    loadedScenes:
+    - w1s1
+    - w1s1tos2
+    position:
+    - 0
+    - 0
+    - 0
+    rotation:
+    - 0
+    - 0
+    - 0
+    PlayerLife: 100
+  IsGameLoaded: 0
+--- !u!4 &1595713926
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595713924}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1676494873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1676494875}
+  - component: {fileID: 1676494874}
+  m_Layer: 0
+  m_Name: EasySaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1676494874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676494873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addb1f2d79156ae4fa5b1f968fc838d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsLoadGame: 0
+  folder: SaveData/
+--- !u!4 &1676494875
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676494873}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991788056
 GameObject:
   m_ObjectHideFlags: 0
@@ -13159,6 +13289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84e46e9a8b55654692b8cac1b3b4ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sc: {fileID: 0}
   startScreen: {fileID: 1386686795}
   Menu: {fileID: 489031569}
   loadingScreen: {fileID: 404289991}

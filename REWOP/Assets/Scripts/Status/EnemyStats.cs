@@ -41,6 +41,7 @@ public class EnemyStats : CharStats{
         enemyCombat.enabled = false;
         enemyController.enabled = false;
         StartCoroutine(DestroyEnemy());
+        AchievementData.instance.UpdateCounterByTag("killVirus", 1);
     }
     IEnumerator DestroyEnemy()
     {

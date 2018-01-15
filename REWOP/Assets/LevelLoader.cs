@@ -4,17 +4,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour {
+    public SceneControl sc;
     public GameObject startScreen;
     public GameObject Menu;
     public GameObject loadingScreen;
     public Text progresstext;
     public Slider slider;
-    public void LoadLevel(int sceneIndex)
+    public void LoadLevel(string sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
-    IEnumerator LoadAsynchronously(int sceneIndex) {
+    IEnumerator LoadAsynchronously(string sceneIndex) {
                 AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         loadingScreen.SetActive(true);
         startScreen.SetActive(false);

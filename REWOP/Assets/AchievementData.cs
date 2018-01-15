@@ -5,14 +5,28 @@ using UnityEngine;
 public class AchievementData : MonoBehaviour {
     public List<AchievementMeta> Achievements;
     public AchievementView AchievementView;
-
+    public static AchievementData instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
     public void UpdateCounters(int index, int delta)
     {
         Achievements[index].CurQuantity += delta;
         AchievementView.UpdateAchievements();
             CheckStat();
     }
-
+    public void UpdateCounterByTag(string tag, int delta)
+    {
+        foreach (var Achievement in Achievements)
+        {
+            if(Achievement.tag == tag)
+            {
+                Achievement.CurQuantity += delta;
+            }
+        }
+    }
     public void CheckStat()
     {
         foreach (var Achievement in Achievements)

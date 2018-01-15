@@ -11,13 +11,21 @@ public class PlayerManager : MonoBehaviour {
         if (!instance)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+     //       DontDestroyOnLoad(gameObject);
         }
     }
 
-
+    private void Start()
+    {
+        if (EasySaveLoadManager.Instance.IsLoadGame)
+            Load();
+    }
 
     #endregion
+    private void Load()
+    {
+        PlayerState.Load();
+    }
 
     public GameObject player;
 

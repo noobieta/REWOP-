@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : CharStats {
- 
+    private void Start()
+    {
+        Load();
+    }
     public override void Die()
     {
         base.Die();
@@ -27,5 +30,17 @@ public class PlayerStats : CharStats {
         else
             return false;
     }
+    public void Load()//Set player health
+    {
+        if (SaveLoadManager.Instance != null)
+            if (SaveLoadManager.Instance.gameData != null)
+        {
+            SetCurrentHealth(SaveLoadManager.Instance.gameData.PlayerLife);
+        }
+    }
 
+    public override void SetCurrentHealth(int amount)
+    {
+        base.SetCurrentHealth(amount);
+    }
 }

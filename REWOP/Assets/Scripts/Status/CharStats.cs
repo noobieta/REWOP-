@@ -2,7 +2,7 @@
 
 public class CharStats : MonoBehaviour {
     public int maxHealth = 100;
-    public int currentHealth { get; private set; }
+    public int currentHealth { get; set; }
     public Stat damage;
     public Stat armor;
    
@@ -30,6 +30,10 @@ public class CharStats : MonoBehaviour {
 
         return true;
 
+    }
+    public virtual void SetCurrentHealth(int amount)
+    {
+        currentHealth = amount;
     }
 
     public virtual void Die()

@@ -16,12 +16,16 @@ public class SceneCollider : MonoBehaviour {
     {
 
         sc.UnloadScene(sceneToUnload);
-        sc.LoadScene(sceneToLoad);
+        StartCoroutine(BufferLoadScene());
     }
 
     private void OnTriggerEnter(Collider other)
     {
         LoadScenes();
     }
-
+    IEnumerator BufferLoadScene()
+    {
+        yield return new WaitForSeconds(1);
+        sc.LoadScene(sceneToLoad);
+    }
 }

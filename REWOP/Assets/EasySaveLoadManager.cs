@@ -28,6 +28,7 @@ public class EasySaveLoadManager : MonoBehaviour {
         //insert all here!
         PlayerState.Save();
         SceneState.Save();
+        QuestState.Save();
         ES2.Save(true, folder + "IsSaved");
     }
     public void LoadData()
@@ -91,12 +92,12 @@ public static class QuestState
     public static void Save()
     {
         //Get Quest instance and lagay mo dun ung load hahahhah
-
+        ES2.Save(QuestManager.instance.questCompleted, folder + "Scenes.dat?tag=questCompleted");
         ///.Instance.savedScenes = ES2.LoadList<bool>(folder + "Quests.dat?tag=questCompleted");
     }
     public static void Load()
     {
-
+        QuestManager.instance.questCompleted = ES2.LoadArray<bool>(folder + "Scenes.dat?tag=questCompleted");
     }
 }
 #endregion

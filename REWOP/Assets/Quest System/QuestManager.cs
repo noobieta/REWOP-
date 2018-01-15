@@ -18,6 +18,8 @@ public class QuestManager : MonoBehaviour {
     void Start () {
         DM = FindObjectOfType<DialogueManager>();
         questCompleted = new bool[quests.Length];
+        if (EasySaveLoadManager.Instance.IsLoadGame)
+            QuestState.Load();
 	}
 	
     public void ShowStartDialogue(Dialogue dialogue) {

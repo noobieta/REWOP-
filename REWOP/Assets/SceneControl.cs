@@ -12,7 +12,7 @@ public class SceneControl : MonoBehaviour {
         if (!instance)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+         //   DontDestroyOnLoad(gameObject);
         }
     }
  

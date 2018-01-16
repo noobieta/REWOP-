@@ -20,7 +20,10 @@ public class QuestManager : MonoBehaviour {
         questCompleted = new bool[quests.Length];
         if (EasySaveLoadManager.Instance.IsLoadGame)
             QuestState.Load();
-	}
+
+        EasySaveLoadManager.Instance.IsLoadGame = false;
+
+    }
 	
     public void ShowStartDialogue(Dialogue dialogue) {
         DM.StartDialogue(dialogue);

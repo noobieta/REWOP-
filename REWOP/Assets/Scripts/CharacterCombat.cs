@@ -50,6 +50,7 @@ public class CharacterCombat : MonoBehaviour
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.damage.GetValue());
 
+		SFXPlaying.instance.PlaySound (SFXPlaying.instance.Attack);
     }
 
 
